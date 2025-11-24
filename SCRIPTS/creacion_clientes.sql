@@ -16,3 +16,28 @@ values ('1150626693', 'David', 'Burneo')
 select cedula, nombre, apellido from clientes
 --traer todas la columnas sin esepcion 
 select * from clientes
+
+
+select * from estudiantes where fecha_nacimiento >= '31/05/2004'
+---Se puede usar operadores relacionales y el betweenn para comparar dos valores
+select * from estudiantes where fecha_nacimiento between '01/01/2000' and '31/05/2004'
+
+---Los % serian los valores indeterminados al poner el caracter antes o despues de el % 
+--SE OBTIENE la respuesta
+select * from estudiantes 
+where nombre like '%a%'
+
+select * from estudiantes 
+where cedula like '%5%'
+
+---Buscar un null
+select * from estudiantes 
+where fecha_nacimiento is null
+
+---Buscar con operador "diferente" (<> o !=) este operador no trae valores null
+select * from estudiantes where nombre <> 'David'
+select * from estudiantes where cedula != '1122334456'
+
+
+insert into estudiantes (cedula, nombre, apellido, email)
+values ('112312313','Pedro', 'Ludena','pedro@gmail')
