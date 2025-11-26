@@ -38,6 +38,20 @@ where fecha_nacimiento is null
 select * from estudiantes where nombre <> 'David'
 select * from estudiantes where cedula != '1122334456'
 
+---Actualizar tabla---
+update estudiantes set cedula = '1150626693'
+where cedula = '1122334462'
+---Actualizar null---
+update estudiantes set cedula = '1150626693'
+where cedula is null
+---Actualizar varios valores---
+update estudiantes set email = 'francisco@gmail.com', fecha_nacimiento = '15/10/2004'
+where cedula = '1150626693'
+
+---Eliminaciones--- NO HACER DELETE SIN WHERE NI UPDATE SIN WHERE
+delete from clientes 
+where cedula = '1150626693'
+select * from clientes
 
 insert into estudiantes (cedula, nombre, apellido, email)
 values ('112312313','Pedro', 'Ludena','pedro@gmail')
