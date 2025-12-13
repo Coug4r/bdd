@@ -55,3 +55,17 @@ select * from clientes
 
 insert into estudiantes (cedula, nombre, apellido, email)
 values ('112312313','Pedro', 'Ludena','pedro@gmail')
+
+insert into clientes (cedula, nombre, apellido, edad)
+values ('1102182266','Fabian', 'Burneo', 62)
+
+Select * from registros_entrada
+create table personas(
+	cedula char(10) not null,
+	nombre varchar(50) not null,
+	apellido varchar(50) not null,
+	constraint persona_pk primary key (cedula)
+)
+select * from personas
+alter table personas --- Alterar una tabla
+add column estado_civil_codigo char(1) not null ---Agregar columna
