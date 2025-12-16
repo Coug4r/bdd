@@ -69,3 +69,33 @@ create table personas(
 select * from personas
 alter table personas --- Alterar una tabla
 add column estado_civil_codigo char(1) not null ---Agregar columna
+
+---Agregacion
+select count(ec.codigo)  --- () columna que se quiere contar ---
+from personas per, estado_civil ec
+where per.estado_civil_codigo = ec.codigo
+and estado_civil_codigo = 'C'
+
+--- AVG PROMEDIO ---
+select avg(edad) from clientes ---() columna sobre la que se aplica el promedio
+--- solo recibe datos numericos en caso de otros datos hacer un cast()
+select per.cedula from personas per
+select avg(cast(per.cedula as numeric))	  
+from personas per, estado_civil ec
+where per.estado_civil_codigo = ec.codigo
+and estado_civil_codigo = 'C'
+
+
+---SUM, MAX y MIN
+select SUM(edad) from clientes
+select MAX(edad) from clientes
+select MIN(edad) from clientes
+
+select sum()  --- () columna que se quiere contar --- solo datos numericos
+from personas per, estado_civil ec
+where per.estado_civil_codigo = ec.codigo
+and estado_civil_codigo = 'C'
+
+---group by
+select estado_civil_codigo,count(*) from clientes
+group by estado_civil_codigo
